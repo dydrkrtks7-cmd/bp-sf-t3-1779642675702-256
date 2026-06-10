@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-ivory-ink">
+    <title>마포 셔츠룸 | 프리미엄 주식 투자 정보</title>
+    <meta name="description" content="마포 셔츠룸의 투자 정보와 전략적 인사이트를 확인하세요. 마포 지역 기반 프리미엄 주식 투자 공간의 데이터 분석, 포트폴리오 최적화 서비스를 제공합니다. 문의 010-6279-0862">
+    <meta name="keywords" content="마포 셔츠룸 정보, 마포 투자 정보, 마포 주식 정보, 셔츠룸 투자 정보, 주식 투자 공간, 마포 프리미엄 투자">
+    <link rel="canonical" href="https://sf-t3-1779642675702-256.vercel.app/info">
+    <meta property="og:title" content="마포 셔츠룸 | 프리미엄 주식 투자 정보">
+    <meta property="og:description" content="마포 셔츠룸에서 제공하는 데이터 기반 투자 정보와 전략적 인사이트를 확인하세요. 전문가의 분석으로 포트폴리오를 최적화하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sf-t3-1779642675702-256.vercel.app/info">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Serif KR', 'Georgia', serif;
+            background: #faf8f5;
+            color: #2c2c2c;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        header {
+            background: #1a1a1a;
+            padding: 16px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #f5f5f5;
+            font-weight: 300;
+        }
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        nav a:hover {
+            color: #d4af37;
+        }
+        .cta-phone {
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Noto Sans KR', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .cta-phone:hover {
+            background: #c9a52e;
+            transform: translateY(-1px);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #d4af37;
+            transition: all 0.3s;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #1a1a1a;
+            padding: 24px;
+            flex-direction: column;
+            gap: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            z-index: 999;
+        }
+        .mobile-nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .mobile-nav .cta-phone {
+            display: inline-block;
+            text-align: center;
+            margin-top: 8px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Hero Section */
+        .hero-info {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            text-align: center;
+            position: relative;
+        }
+        .hero-info::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #f5e6a3, #d4af37);
+        }
+        .hero-info h1 {
+            font-size: 42px;
+            color: #f5f5f5;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-family: 'Noto Serif KR', serif;
+        }
+        .hero-info h1 span {
+            color: #d4af37;
+        }
+        .hero-info p {
+            font-size: 18px;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.8;
+        }
+        .hero-info .sub-title {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+            background: #faf8f5;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .hero-info h1 {
+                font-size: 28px;
+            }
+        }
+        .content-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e8e4df;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+        .content-card h2 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-family: 'Noto Serif KR', serif;
+            letter-spacing: 1px;
+        }
+        .content-card h2 .accent {
+            color: #d4af37;
+        }
+        .content-card p {
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .content-card .stat {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d4af37;
+            font-family: 'Noto Serif KR', serif;
+            margin: 16px 0 8px;
+        }
+        .content-card .stat-label {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .content-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+        .content-card ul li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+            color: #4a4a4a;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .content-card ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 10px;
+        }
+
+        /* Data Section */
+        .data-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+            color: #f5f5f5;
+        }
+        .data-section h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 48px;
+            font-family: 'Noto Serif KR', serif;
+            letter-spacing: 2px;
+        }
+        .data-section h2 span {
+            color: #d4af37;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        @media (max-width: 768px) {
+            .data-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+        .data-item {
+            text-align: center;
+            padding: 32px 24px;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        .data-item:hover {
+            border-color: #d4af37;
+        }
+        .data-item .number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #d4af37;
+            font-family: 'Noto Serif KR', serif;
+            margin-bottom: 12px;
+        }
+        .data-item .label {
+            font-size: 16px;
+            color: #b0b0b0;
+            font-family: 'Noto Sans KR', sans-serif;
+            letter-spacing: 1px;
+        }
+        .data-item .desc {
+            font-size: 13px;
+            color: #888;
+            margin-top: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background: #faf8f5;
+        }
+        .map-section h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Noto Serif KR', serif;
+            letter-spacing: 2px;
+        }
+        .map-section h2 span {
+            color: #d4af37;
+        }
+        .map-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #e8e4df;
+            height: 400px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #888;
+            font-size: 18px;
+            border: 1px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+        .map-container::before {
+            content: '📍 마포구';
+            font-size: 24px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .map-container::after {
+            content: '서울특별시 마포구 · 프리미엄 투자 공간';
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            color: #4a4a4a;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        .faq-section h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 48px;
+            font-family: 'Noto Serif KR', serif;
+            letter-spacing: 2px;
+        }
+        .faq-section h2 span {
+            color: #d4af37;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e8e4df;
+            padding: 24px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Noto Serif KR', serif;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #d4af37;
+            transition: transform 0.3s;
+        }
+        .faq-question.active::after {
+            content: '−';
+        }
+        .faq-answer {
+            padding-top: 16px;
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.8;
+            display: none;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 32px;
+            color: #f5f5f5;
+            margin-bottom: 16px;
+            font-family: 'Noto Serif KR', serif;
+            letter-spacing: 2px;
+        }
+        .cta-section h2 span {
+            color: #d4af37;
+        }
+        .cta-section p {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 32px;
+            font-family: 'Noto Sans KR', sans-serif;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-section .cta-phone {
+            display: inline-block;
+            font-size: 18px;
+            padding: 16px 48px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+        footer p {
+            color: #888;
+            font-size: 13px;
+            font-family: 'Noto Sans KR', sans-serif;
+            letter-spacing: 1px;
+        }
+        footer .footer-phone {
+            color: #d4af37;
+            font-size: 16px;
+            margin-top: 8px;
+            font-weight: 600;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* Scroll animation helper */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="/" class="logo">마포 <span>셔츠룸</span></a>
+        <nav>
+            <a href="/">홈</a>
+            <a href="/info">정보</a>
+            <a href="/strategy">전략</a>
+            <a href="/contact">문의</a>
+            <a href="tel:010-6279-0862" class="cta-phone">010-6279-0862</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMobileNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+</body>
+</html>
